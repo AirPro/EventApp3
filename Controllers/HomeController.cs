@@ -22,7 +22,12 @@ namespace EventApp3.Controllers
                 .ToList();
             return View(events);
         }
-        
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
     }
 }
 
