@@ -1,9 +1,7 @@
 ﻿using EventApp3.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace EventApp3.Controllers
 {
@@ -23,14 +21,14 @@ namespace EventApp3.Controllers
 			return View("Edit", new Event());
 		}
 
-		[HttpGet]
-		public IActionResult Edit(int id)
-		{
-			ViewBag.Action = "Edit";
-			ViewBag.Events = context.Events.OrderBy(e => e.EventId).ToList();
-			var event = context.Events.Find(id);
-            return View(event);
-		}
+		//[HttpGet]
+		//public IActionResult Edit(int id)
+		//{
+		//	ViewBag.Action = "Edit";
+		//	ViewBag.Events = context.Events.OrderBy(e => e.EventId).ToList();
+		//	var event = context.Events.Find(id);
+        //  return View(event);
+		//}
 
 		//public IActionResult Index()
 		//{
