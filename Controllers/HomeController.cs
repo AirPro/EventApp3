@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using EventApp3.Models;
+using EventApp3.Models.DataLayer;
 
 namespace EventApp3.Controllers
 {

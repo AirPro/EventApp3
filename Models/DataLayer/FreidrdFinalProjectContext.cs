@@ -1,7 +1,8 @@
 ﻿
+using EventApp3.Models.DomainModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventApp3.Models
+namespace EventApp3.Models.DataLayer
 {
     public class FreidrdFinalProjectContext : DbContext
     {

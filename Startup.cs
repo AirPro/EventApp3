@@ -1,5 +1,6 @@
 
 using EventApp3.Models;
+using EventApp3.Models.DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

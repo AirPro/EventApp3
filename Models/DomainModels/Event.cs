@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace EventApp3.Models
+namespace EventApp3.Models.DomainModels
 {
     public partial class Event
     {

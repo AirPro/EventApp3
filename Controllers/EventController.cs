@@ -1,4 +1,5 @@
-﻿using EventApp3.Models;
+﻿using EventApp3.Models.DataLayer;
+using EventApp3.Models.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 

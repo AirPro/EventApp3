@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Event>
+﻿@model IEnumerable<EventApp3.Models.DomainModels.Event>
 @{
     ViewData["Title"] = "Event Home Page";
 }
@@ -10,7 +10,7 @@
         <tr><th>Event Id</th><th>Event Name</th><th>Event City</th><th>Event Date</th><th>Venue Name</th><th>Venue Address</th><th>Promoter Name</th></tr>
     </thead>
     <tbody>
-        @foreach (Event e in Model)
+        @foreach (EventApp3.Models.DomainModels.Event e in Model) 
         {
             <tr>
                 <td>@e.EventId</td>
