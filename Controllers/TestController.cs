@@ -21,9 +21,5 @@ namespace EventApp3.Controllers
 			});
 			return View(events);
 		}
-		//public IActionResult Index()
-		//{
-		//	return View();
-		//}
 	}
 }
