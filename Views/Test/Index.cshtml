@@ -1,5 +1,30 @@
-﻿
+﻿@model IEnumerable<EventApp3.Models.DomainModels.Event>
 @{
     ViewData["Title"] = "Test Web Page";
 }
 <h2>Test Page for using the Respoitory Model</h2>
+<table class="table">
+    <thead>
+        <tr><th>Event Id</th><th>Event Name</th><th>Event City</th><th>Event Date</th><th>Venue Name</th><th>Venue Address</th><th>Promoter Name</th></tr>
+    </thead>
+    <tbody>
+        @foreach (EventApp3.Models.DomainModels.Event e in Model)
+        {
+            <tr>
+                <td>@e.EventId</td>
+                <td>@e.EventName</td>
+                <td>@e.EventCity</td>
+                <td>@e.EventDate</td>
+                <td>@e.VenueName</td>
+                <td>@e.VenueAddress</td>
+                <td>@e.PromoterName</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Test" asp-route-id="@e.EventId"
+                       class="btn btn-outline-dark">Edit</a>
+                    <a asp-action="Delete" asp-controller="Test" asp-route-id="@e.EventId"
+                       class="btn btn-outline-dark">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

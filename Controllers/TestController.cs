@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EventApp3.Models.DataLayer;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,21 @@ namespace EventApp3.Controllers
 {
 	public class TestController : Controller
 	{
-		public IActionResult Index()
+		private Repository<EventApp3.Models.DomainModels.Event> data { get; set; }
+
+		public TestController(FreidrdFinalProjectContext ctx) => data = new Repository<Models.DomainModels.Event>(ctx);
+
+		public ViewResult Index()
 		{
-			return View();
+			var events = data.List(new QueryOptions<Models.DomainModels.Event>
+			{
+			
+			});
+			return View(events);
 		}
+		//public IActionResult Index()
+		//{
+		//	return View();
+		//}
 	}
 }
