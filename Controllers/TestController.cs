@@ -9,17 +9,41 @@ namespace EventApp3.Controllers
 {
 	public class TestController : Controller
 	{
-		private Repository<EventApp3.Models.DomainModels.Event> data { get; set; }
+		private Repository<EventApp3.Models.DomainModels.Event> events { get; set; }
 
-		public TestController(FreidrdFinalProjectContext ctx) => data = new Repository<Models.DomainModels.Event>(ctx);
+		public TestController(FreidrdFinalProjectContext ctx) => events = new Repository<Models.DomainModels.Event>(ctx);
 
 		public ViewResult Index()
 		{
-			var events = data.List(new QueryOptions<Models.DomainModels.Event>
+			var options = new QueryOptions<EventApp3.Models.DomainModels.Event>
 			{
-			
-			});
-			return View(events);
+				OrderBy = e => e.EventId
+			};
+			return View(events.List(options));
 		}
+		[HttpGet]
+		public ViewResult Add() => View();
+
+		[HttpPost]
+		public IActionResult Add(EventApp3.Models.DomainModels.Event e)
+		{
+			if (ModelState.IsValid)
+			{
+				if (e.EventId == 0)
+					events.Insert(e);
+				else
+					events.Update(e);
+				events.Save();
+				return RedirectToAction("Index", "Test");
+			}
+			else
+			{
+				string operation = (e.EventId == 0) ? "Add" : "Edit";
+				//this.LoadViewBag(operation);
+				return View();
+			}
+
+		}
+		
 	}
 }
