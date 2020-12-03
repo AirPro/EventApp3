@@ -6,7 +6,7 @@
 <h2>Event List</h2>
 <h3>Welcome to the Event Management Application</h3>
 <p>This application manages my events for my hobby, which is playing music!</p>
-<a asp-controller="Event" asp-action="Add">Add New Event</a>
+
 <table class="table">
     <thead>
         <tr><th>Event Id</th><th>Event Name</th><th>Event City</th><th>Event Date</th><th>Venue Name</th><th>Venue Address</th><th>Promoter Name</th></tr>
@@ -22,17 +22,11 @@
                 <td>@e.VenueName</td>
                 <td>@e.VenueAddress</td>
                 <td>@e.PromoterName</td>
-                <td>
-                    <a asp-action="Edit" asp-controller="Event" asp-route-id="@e.EventId"
-                       class="btn btn-outline-dark">Edit</a>
-                    <a asp-action="Delete" asp-controller="Event" asp-route-id="@e.EventId"
-                       class="btn btn-outline-dark">Delete</a>
-                </td>
+                
             </tr>
         }
     </tbody>
 </table>
 <div>
-    <p>This link goes to Pages that use the Repository Method for handling the CRUD operations for my Event Application.</p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Test" asp-action="index">Test Page</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Test" asp-action="index">[Add - Delete - Edit] A Record Here!</a>
 </div>
