@@ -8,18 +8,16 @@ namespace EventApp3.Models.DataLayer
 		private FreidrdFinalProjectContext context { get; set; }
 		public EventUnitOfWork(FreidrdFinalProjectContext ctx) => context = ctx;
 
-        private Repository<Event> dayData;
-        public Repository<Event> Days
+        private Repository<Event> eventData;
+        public Repository<Event> Events
         {
             get
             {
-                if (dayData == null)
-                    dayData = new Repository<Event>(context);
-                return dayData;
+                if (eventData == null)
+                    eventData = new Repository<Event>(context);
+                return eventData;
             }
         }
-
-		public Repository<Event> Events => throw new NotImplementedException();
 
 		public void Save() => context.SaveChanges();
     }

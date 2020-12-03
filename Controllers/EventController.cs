@@ -8,25 +8,9 @@ namespace EventApp3.Controllers
 {
 	public class EventController : Controller
 	{
-		private Repository<EventApp3.Models.DomainModels.Event> events { get; set; }
+		private EventUnitOfWork events { get; set; }
 
-		public EventController(FreidrdFinalProjectContext ctx) => events = new Repository<Models.DomainModels.Event>(ctx);
+		public EventController(FreidrdFinalProjectContext ctx) => events = new EventUnitOfWork(ctx);
 		
-		
-
-		
-
-		//[HttpGet]
-		//public ViewResult Edit(int id)
-		//{
-		//	this.LoadViewBag("Edit");
-		//	var e = this.GetClass(id);
-		//	return View("Add" e);
-		//}
-
-		//public IActionResult Index()
-		//{
-		//	return View();
-		//}
 	}
 }
