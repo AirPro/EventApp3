@@ -8,27 +8,20 @@ namespace EventApp3.Controllers
 {
 	public class EventController : Controller
 	{
-		private FreidrdFinalProjectContext context { get; set; }
-		public EventController(FreidrdFinalProjectContext ctx)
-		{
-			context = ctx;
-		}
+		private Repository<EventApp3.Models.DomainModels.Event> events { get; set; }
 
-		[HttpGet]
-		public IActionResult Add()
-		{
-			ViewBag.Action = "Add";
-			ViewBag.Events = context.Events.OrderBy(e => e.EventId).ToList();
-			return View("Edit", new Event());
-		}
+		public EventController(FreidrdFinalProjectContext ctx) => events = new Repository<Models.DomainModels.Event>(ctx);
+		
+		
+
+		
 
 		//[HttpGet]
-		//public IActionResult Edit(int id)
+		//public ViewResult Edit(int id)
 		//{
-		//	ViewBag.Action = "Edit";
-		//	ViewBag.Events = context.Events.OrderBy(e => e.EventId).ToList();
-		//	var event = context.Events.Find(id);
-        //  return View(event);
+		//	this.LoadViewBag("Edit");
+		//	var e = this.GetClass(id);
+		//	return View("Add" e);
 		//}
 
 		//public IActionResult Index()
