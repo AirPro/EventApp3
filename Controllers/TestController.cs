@@ -34,16 +34,27 @@ namespace EventApp3.Controllers
 				else
 					events.Update(e);
 				events.Save();
-				return RedirectToAction("Index", "Test");
+				return RedirectToAction("Index");
 			}
 			else
 			{
-				string operation = (e.EventId == 0) ? "Add" : "Edit";
-				//this.LoadViewBag(operation);
-				return View();
+				return View(events);
 			}
 
 		}
-		
+
+		[HttpGet]
+		public ViewResult delete(int id)
+		{
+			return View(events.get(id));
+		}
+
+		[HttpPost]
+		public RedirectToActionResult Delete(EventApp3.Models.DomainModels.Event e)
+		{
+			events.Delete(e);
+			events.Save();
+			return RedirectToAction("index");
+		}
 	}
 }
