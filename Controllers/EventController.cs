@@ -11,6 +11,14 @@ namespace EventApp3.Controllers
 		private EventUnitOfWork events { get; set; }
 
 		public EventController(FreidrdFinalProjectContext ctx) => events = new EventUnitOfWork(ctx);
+
+		[HttpPost]
+		public ViewResult Edit(int id)
+		{
+			
+			return View();
+
+		}
 		
 	}
 }

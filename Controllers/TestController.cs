@@ -1,9 +1,5 @@
 ﻿using EventApp3.Models.DataLayer;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EventApp3.Controllers
 {
@@ -40,7 +36,6 @@ namespace EventApp3.Controllers
 			{
 				return View(events);
 			}
-
 		}
 
 		[HttpGet]
